@@ -1,0 +1,37 @@
+<!-- templates/dashboard.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Disaster Dashboard</title>
+</head>
+<body>
+    <h1>Disaster Data Dashboard</h1>
+    
+    <table>
+        <thead>
+            <tr>
+                <th>Source</th>
+                <th>Category</th>
+                <th>Content</th>
+                <th>Author</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Link</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.source }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.content }}</td>
+                <td>{{ item.author }}</td>
+                <td>{{ item.location }}</td>
+                <td>{{ item.created_at }}</td>
+                <td><a href="{{ item.url }}" target="_blank">View</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
