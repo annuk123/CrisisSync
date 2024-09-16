@@ -8,6 +8,8 @@ from django.contrib.auth import authenticate
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework import serializers
+from django.http import JsonResponse
+
 #from .models import DisasterData  # Import the DisasterData model
 # from .services.data_service import aggregate_disaster_data, categorize_disaster
 # backend/views.py
@@ -88,4 +90,14 @@ def fetch_and_save_disaster_data(request):
     
     return render(request, 'dashboard.html', {'data': DisasterData.objects.all()})
 
+def disaster_data_view(request):
+    data = {
+        "disasters": [
+            {"type": "earthquake", "severity": 5},
+            {"type": "flood", "severity": 7},
+        ]
+    }
+    return JsonResponse(data)
 
+def disaster_map_view(request):
+    return render(request, 'index.html')

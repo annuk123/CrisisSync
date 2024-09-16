@@ -28,11 +28,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.http import HttpResponse
-
 from django.urls import path
 from .views import MyTokenObtainPairView, register, login
 from rest_framework_simplejwt.views import TokenRefreshView
 from .views import fetch_and_save_disaster_data
+from . import views
 #from .views import disaster_tweets_view
 # You can define a simple view for the root URL
 def home(request):
@@ -49,6 +49,8 @@ urlpatterns = [
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
      path('dashboard/', fetch_and_save_disaster_data, name='dashboard'),
      path('disaster/', include('disaster.urls')),
+      path('api/disaster-data/', views.disaster_data_view, name='disaster-data'),
+        path('map/', views.disaster_map_view, name='disaster_map'),
 
 ]
 
