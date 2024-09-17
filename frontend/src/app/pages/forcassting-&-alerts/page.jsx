@@ -54,7 +54,7 @@ const ForecastingAndAlerts = () => {
 
       {/* Breadcrumb Navigation */}
       <div className="mt-12 relative">
-        <nav className="flex text-sm text-gray-600 space-x-2 sticky">
+        <nav className="flex text-sm text-gray-600 space-x-2 z-20">
         
           <Link href="/" className="hover:text-blue-600">Home</Link>
           <span>/</span>
@@ -64,7 +64,7 @@ const ForecastingAndAlerts = () => {
 
       {/* Navigation Menu */}
       <main>
-        <nav className={`bg-gray-200 text-black shadow-md p-3 sm:p-4 w-full sticky top-0 z-50 rounded-2xl mt-10`}>
+        <nav className={`bg-gray-200 text-black shadow-md p-3 sm:p-5 w-full top-0 rounded-2xl mt-10 sticky `}>
           <div className="flex flex-row justify-between sm:justify-center space-x-6 overflow-x-auto">
             <button onClick={() => setFilter('all')} className="text-sm hover:text-blue-600 font-semibold transition-colors duration-300">Crisis</button>
             <button onClick={() => setFilter('earthquake')} className="text-sm hover:text-blue-600 font-semibold transition-colors duration-300">Earthquake</button>

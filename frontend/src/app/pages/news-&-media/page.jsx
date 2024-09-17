@@ -95,7 +95,7 @@ const LeafletMap = () => {
 
       <h3 className="text-lg font-serif uppercase mb-4 text-gray-700">News And Media</h3>
 
-      <div id="map" className="w-full h-[400px] mt-6"></div>
+      <div id="map" className="w-full h-[400px] mt-6 z-20"></div>
     </div>
   );
 };

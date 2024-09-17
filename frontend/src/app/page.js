@@ -189,10 +189,10 @@ export default function Home() {
 
       {/* Map Section */}
       <div className='container mx-auto py-8'>
-        <h2 className='text-2xl font-bold text-slate-900 mb-4 text-center'>
+        <h1 className='text-2xl font-bold text-slate-900 mb-4 text-center'>
           Map
-        </h2>
-        <div id='map' className='w-full h-96 rounded-lg'></div>
+        </h1>
+        <div id='map' className='w-full h-96 z-20 rounded-lg'></div>
       </div>
     </div>
   );
