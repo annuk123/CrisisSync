@@ -23,6 +23,7 @@ const Navbar = () => {
     };
 
   const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
 
   const router = useRouter(); // Get the current router object
@@ -115,70 +116,58 @@ const Navbar = () => {
 
     {/* Right Side Content (for example, Profile Icon and Toggle Menu) */}
     <div className="flex items-center space-x-4 ml-auto">
-      <Link href="/profile" className="hover:text-gray-600" >
+      <Link href="/profile" className="hover:text-gray-600">
         <ProfileIcon className="w-8 h-8" />
       </Link>
-        <button onClick={toggleMenu} className="text-black">
-            {isOpen ? (
-              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            ) : (
-              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-              </svg>
-            )}
-          </button>
+      <button onClick={toggleMenu} className="text-black">
+        {isOpen ? (
+          <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        ) : (
+          <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+          </svg>
+        )}
+      </button>
     </div>
   </div>
 
   {/* Mobile Menu Links */}
   <div className={`flex flex-col space-y-4 ${isOpen ? 'block' : 'hidden'}`}>
     <div className="flex flex-col space-y-4">
-          <Link href="/" className={`text-sm font-semibold ${isActive('/') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
-            Mission
-          </Link>
-          <hr className="border-gray-300" />
-          <Link href="/pages/forcassting-&-alerts" className={`text-sm ${isActive('/pages/forcassting-&-alerts') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
-            Forecasting & Alerts
-          </Link>
-          <hr className="border-gray-300" />
-          <Link href="/pages/personal-safety" className={`text-sm ${isActive('/pages/personal-safety') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
-            Personal Safety
-          </Link>
-          <hr className="border-gray-300" />
-          <Link href="/pages/recovery-&-resilience" className={`text-sm ${isActive('/pages/recovery-&-resilience') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
-            Recovery & Resilience
-          </Link>
-          <hr className="border-gray-300" />
-          <Link href="/pages/news-&-media" className={`text-sm ${isActive('/pages/news-&-media') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
-            News & Media
-          </Link>
-          <hr className="border-gray-300" />
-          <Link href="/pages/disaster-dashboard" className={`text-sm ${isActive('/pages/disaster-dashboard') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
-            Disaster DashBoard
-          </Link>
-          <hr className="border-gray-300" />
-          <Link href="/pages/login" passHref>
-            <Button variant="contained" color="primary" size="small">
-              Login
-            </Button>
-          </Link>
-        </div>
+      <Link href="/" onClick={closeMenu} className={`text-sm font-semibold ${isActive('/') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
+        Mission
+      </Link>
+      <hr className="border-gray-300" />
+      <Link href="/pages/forcassting-&-alerts" onClick={closeMenu} className={`text-sm ${isActive('/pages/forcassting-&-alerts') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
+        Forecasting & Alerts
+      </Link>
+      <hr className="border-gray-300" />
+      <Link href="/pages/personal-safety" onClick={closeMenu} className={`text-sm ${isActive('/pages/personal-safety') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
+        Personal Safety
+      </Link>
+      <hr className="border-gray-300" />
+      <Link href="/pages/recovery-&-resilience" onClick={closeMenu} className={`text-sm ${isActive('/pages/recovery-&-resilience') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
+        Recovery & Resilience
+      </Link>
+      <hr className="border-gray-300" />
+      <Link href="/pages/news-&-media" onClick={closeMenu} className={`text-sm ${isActive('/pages/news-&-media') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
+        News & Media
+      </Link>
+      <hr className="border-gray-300" />
+      <Link href="/pages/disaster-dashboard" onClick={closeMenu} className={`text-sm ${isActive('/pages/disaster-dashboard') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
+        Disaster DashBoard
+      </Link>
+      <hr className="border-gray-300" />
+      <Link href="/pages/login" onClick={closeMenu} passHref>
+        <Button variant="contained" color="primary" size="small" className='w-full'>
+          Login
+        </Button>
+      </Link>
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-{/* Mobile Menu */}
-
-
 
 
     </nav>

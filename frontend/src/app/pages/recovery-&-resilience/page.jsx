@@ -157,6 +157,8 @@ const Bar = dynamic(() => import('react-chartjs-2').then(mod => mod.Bar), { ssr:
       {/* Interactive Map (Rendered only on client-side) */}
       {isClient && (
         <div className="w-full max-w-4xl mb-6">
+        {/* // <div className="flex flex-col items-center justify-center min-h-screen bg-slate-200 p-6 pt-20"> */}
+
           <MapContainer center={[51.505, -0.09]} zoom={13} style={{ height: '400px', width: '100%' }}>
             <TileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -223,4 +225,6 @@ const Bar = dynamic(() => import('react-chartjs-2').then(mod => mod.Bar), { ssr:
 };
 
 export default RecoveryResilience;
+
+
 
