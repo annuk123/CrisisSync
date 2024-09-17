@@ -31,7 +31,7 @@ const Navbar = () => {
   const isActive = (pathname) => router.pathname === pathname; // Function to check active route
 
   return (
-    <nav className="bg-white text-black shadow-md p-3 sm:p-4 w-full sticky top-0 z-50">
+    <nav className="bg-white text-black shadow-md p-3 sm:p-4 w-full fixed top-0 z-50">
       <div className="container mx-auto flex items-center justify-between">
         <div className="flex items-center space-x-4">
           <Link href="/">
