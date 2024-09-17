@@ -63,17 +63,27 @@ const ForecastingAndAlerts = () => {
       </div>
 
       {/* Navigation Menu */}
-      <main>
-        <nav className={`bg-gray-200 text-black shadow-md p-3 sm:p-5 w-full top-0 rounded-2xl mt-10 sticky `}>
-          <div className="flex flex-row justify-between sm:justify-center space-x-6 overflow-x-auto">
-            <button onClick={() => setFilter('all')} className="text-sm hover:text-blue-600 font-semibold transition-colors duration-300">Crisis</button>
-            <button onClick={() => setFilter('earthquake')} className="text-sm hover:text-blue-600 font-semibold transition-colors duration-300">Earthquake</button>
-            <button onClick={() => setFilter('flood')} className="text-sm hover:text-blue-600 font-semibold transition-colors duration-300">Flood Forecasting</button>
-            <button onClick={() => setFilter('wildfire')} className="text-sm hover:text-blue-600 font-semibold transition-colors duration-300">Wildfires</button>
-            <button onClick={() => setFilter('hurricane')} className="text-sm hover:text-blue-600 font-semibold transition-colors duration-300">Hurricanes</button>
-          </div>
-        </nav>
-      </main>
+<main>
+  <nav className="bg-gray-200 text-black shadow-md p-4 w-full top-0 rounded-xl sticky z-10">
+    <div className="flex flex-wrap justify-center sm:justify-between space-x-4 sm:space-x-6 overflow-x-auto scrollbar-hide">
+      <button onClick={() => setFilter('all')} className="text-sm sm:text-base hover:text-blue-600 font-semibold transition-colors duration-300 whitespace-nowrap">
+        Crisis
+      </button>
+      <button onClick={() => setFilter('earthquake')} className="text-sm sm:text-base hover:text-blue-600 font-semibold transition-colors duration-300 whitespace-nowrap">
+        Earthquake
+      </button>
+      <button onClick={() => setFilter('flood')} className="text-sm sm:text-base hover:text-blue-600 font-semibold transition-colors duration-300 whitespace-nowrap">
+        Flood Forecasting
+      </button>
+      <button onClick={() => setFilter('wildfire')} className="text-sm sm:text-base hover:text-blue-600 font-semibold transition-colors duration-300 whitespace-nowrap">
+        Wildfires
+      </button>
+      <button onClick={() => setFilter('hurricane')} className="text-sm sm:text-base hover:text-blue-600 font-semibold transition-colors duration-300 whitespace-nowrap">
+        Hurricanes
+      </button>
+    </div>
+  </nav>
+</main>
 
       {/* Display filtered disaster alerts */}
       <div className="mt-12 w-full max-w-3xl space-y-6">
