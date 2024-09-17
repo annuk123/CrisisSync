@@ -15,13 +15,13 @@ const PersonalSafety = () => {
       </div>
 
       <main className="text-center mb-12">
-        <img 
+        <image 
           src="https://imgs.search.brave.com/k9ZvbMNgAKwtj_ESlKvTDE0bWRzWKUT8Zs6wqfAZZwo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTQx/OTU2MzM2Mi9waG90/by9hcm15LWRvY3Rv/ci13aXRoLWNpdmls/aWFucy1hZnRlci1u/YXR1cmFsLWRpc2Fz/dGVyLmpwZz9zPTYx/Mng2MTImdz0wJms9/MjAmYz02WDNrc281/RC1YWFJfelZWOUZu/TGdlNzB4TUpIV2V0/di1mbnNwSV9nV2xB/PQ" 
           alt="Personal Safety" 
           className="mx-auto mb-6 rounded-lg shadow-lg" 
         />
         <p className="text-lg max-w-3xl mx-auto mb-6 text-gray-700">
-          Personal safety involves understanding and preparing for various risks in your everyday life. Follow these tips to ensure you're ready for emergencies and can handle unexpected situations effectively.
+          Personal safety involves understanding and preparing for various risks in your everyday life. Follow these tips to ensure you&apos;re ready for emergencies and can handle unexpected situations effectively.
         </p>
         
         <section className="my-8 bg-white p-6 rounded-lg shadow-md">
