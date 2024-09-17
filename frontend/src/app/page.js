@@ -357,7 +357,7 @@ export default function Home() {
         <p className='text-lg text-slate-700 mb-6 text-center'>
           Explore the range of features to keep you informed and prepared.
         </p>
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
           {/* Forecasting & Alerts Section */}
           <div className='bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
             <div className='p-6 flex flex-col items-center'>
@@ -408,7 +408,7 @@ export default function Home() {
           <div className='bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
             <div className='p-6 flex flex-col items-center'>
               <Image 
-                src='https://imgs.search.brave.com/10pTfE3Tpf9eZW0F_Nab9cqfVJzH8wx8Y3c6s2oeXH8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4y/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvd2VhdGhlci0y/NjkvMTQ2L3h2LTQz/LTcyNS5wbmc' 
+                src='https://imgs.search.brave.com/UexTnb-tL9AToyVbNpAILCR0BqnBthVpXlyQ3nTqujU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4t/aWNvbnMtcG5nLmZy/ZWVwaWsuY29tLzI1/Ni8xMzM1MC8xMzM1/MDU3My5wbmc_c2Vt/dD1haXNfaHlicmlk' 
                 alt='Recovery & Resilience' 
                 className='w-40 h-40 object-cover rounded-t-lg mb-4'
                 width={160}
@@ -431,7 +431,7 @@ export default function Home() {
           <div className='bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
             <div className='p-6 flex flex-col items-center'>
               <Image 
-                src='https://imgs.search.brave.com/UbYePRFQzTCOw-tw1-wLP5MI1o7N3LLZQbtfZjY0H0U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4y/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvd2VhdGhlci0y/NjkvMTQ0L3d2cS0w/Ni1hdXMuYXNvY2lhdGVyLmpwZw' 
+                src='https://imgs.search.brave.com/z2ybeo0piv_RLrWEwbyPJeAAXDhpGK_neSLGIWPmJFs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29oZXNpdHkuY29t/L3dwLWNvbnRlbnQv/bmV3X21lZGlhLzIw/MjMvMDcvcmVwb3J0/LWljb25zLnN2Zw' 
                 alt='News & Media' 
                 className='w-40 h-40 object-cover rounded-t-lg mb-4'
                 width={160}
