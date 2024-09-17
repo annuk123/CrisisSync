@@ -74,7 +74,7 @@ const Navbar = () => {
           </Link>
 
           <Link href="/profile" className="hover:text-gray-600">
-            <ProfileIcon />
+            <ProfileIcon className="w-9 h-9" />
           </Link>
 
            {isLoggedIn ? (
@@ -117,7 +117,7 @@ const Navbar = () => {
     {/* Right Side Content (for example, Profile Icon and Toggle Menu) */}
     <div className="flex items-center space-x-4 ml-auto">
       <Link href="/profile" className="hover:text-gray-600">
-        <ProfileIcon className="w-8 h-8" />
+        <ProfileIcon className="w-9 h-9" />
       </Link>
       <button onClick={toggleMenu} className="text-black">
         {isOpen ? (
