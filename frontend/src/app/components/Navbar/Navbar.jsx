@@ -24,6 +24,7 @@ const Navbar = () => {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+
   const router = useRouter(); // Get the current router object
 
   const isActive = (pathname) => router.pathname === pathname; // Function to check active route
@@ -89,47 +90,51 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Icons and Menu Toggle */}
-      <div className="flex items-center space-x-4 lg:hidden">
-        <Link href="/profile" className="hover:text-gray-600">
-          <ProfileIcon />
-        </Link>
-        <button className="text-black" onClick={toggleMenu}>
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
+      {/* Mobile Navbar */}
+<div className="absolute top-0 right-0 w-full bg-white z-50 p-4 lg:hidden">
+  <div className="flex items-center justify-between mb-4">
+    {/* Left Side Content (for example, Logo) */}
+    <div className="flex items-center space-x-4">
+      <Link href="/">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          className="w-12 h-12"
+        >
+          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+          <line x1="12" y1="4" x2="12" y2="20" stroke="currentColor" strokeWidth="2" />
+          <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" />
+        </svg>
+      </Link>
+      <Link href="/" className="text-2xl font-bold">
+        CrisisSync
+      </Link>
+    </div>
 
-
-      {/* Mobile Menu */}
-      <div className={`absolute top-0 left-0 w-full bg-white z-50 p-4 lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <div className="flex items-center justify-between mb-4">
-          <div className="text-xl font-bold">
-            <Link href="/">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                className="w-12 h-12"
-              >
-                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
-                <line x1="12" y1="4" x2="12" y2="20" stroke="currentColor" strokeWidth="2" />
-                <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" />
+    {/* Right Side Content (for example, Profile Icon and Toggle Menu) */}
+    <div className="flex items-center space-x-4 ml-auto">
+      <Link href="/profile" className="hover:text-gray-600" >
+        <ProfileIcon className="w-8 h-8" />
+      </Link>
+        <button onClick={toggleMenu} className="text-black">
+            {isOpen ? (
+              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
               </svg>
-            </Link>
-            <Link href="/" className="text-2xl font-bold">
-              CrisisSync
-            </Link>
-          </div>
-          <button onClick={toggleMenu} className="text-black">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+            ) : (
+              <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            )}
           </button>
-        </div>
-        <div className="flex flex-col space-y-4">
+    </div>
+  </div>
+
+  {/* Mobile Menu Links */}
+  <div className={`flex flex-col space-y-4 ${isOpen ? 'block' : 'hidden'}`}>
+    <div className="flex flex-col space-y-4">
           <Link href="/" className={`text-sm font-semibold ${isActive('/') ? 'font-bold text-blue-600' : 'hover:text-gray-600'}`}>
             Mission
           </Link>
@@ -160,7 +165,22 @@ const Navbar = () => {
             </Button>
           </Link>
         </div>
-      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+{/* Mobile Menu */}
+
+
+
+
     </nav>
   );
 };
