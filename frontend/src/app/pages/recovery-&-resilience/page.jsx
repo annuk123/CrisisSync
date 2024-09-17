@@ -2,7 +2,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import 'leaflet/dist/leaflet.css';
-import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 import Image from 'next/image';
 
@@ -23,7 +22,7 @@ const images = [
 const RecoveryResilience = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-slate-200 p-6">
-
+      
       <h3 className="text-lg font-serif uppercase mb-4 text-gray-700">
         Recovery and Resilience
       </h3>
@@ -46,25 +45,23 @@ const RecoveryResilience = () => {
         Explore resources, tools, and guides to help communities recover and build resilience in the face of disasters.
       </p>
 
-      {/* Interactive Map (Rendered only on client-side) */}
+      {/* Interactive Map */}
       <div className="w-full max-w-4xl mb-6">
-        <div className="flex flex-col items-center justify-center min-h-screen bg-slate-200 p-6 pt-20">
-          <MapContainer center={[51.505, -0.09]} zoom={13} style={{ height: '400px', width: '100%' }} className='z-20'>
-            <TileLayer
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            />
-            <Marker position={[51.505, -0.09]}>
-              <Popup>
-                Disaster Event Location. <br /> More details here.
-              </Popup>
-            </Marker>
-          </MapContainer>
-        </div>
+        <MapContainer center={[51.505, -0.09]} zoom={13} style={{ height: '450px', width: '100%' }} className="z-20">
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          />
+          <Marker position={[51.505, -0.09]}>
+            <Popup>
+              Disaster Event Location. <br /> More details here.
+            </Popup>
+          </Marker>
+        </MapContainer>
       </div>
 
       {/* Data Visualization (Sample Chart) */}
-      <div className="w-full max-w-4xl mb-6 hidden">
+      <div className="w-full max-w-4xl mb-6">
         <h2 className="text-2xl font-semibold text-gray-900 mb-4">Disaster Statistics</h2>
         <div className="bg-white p-4 rounded-lg shadow-lg">
           <BarChart
@@ -88,6 +85,7 @@ const RecoveryResilience = () => {
                 },
               },
             }}
+            height={300}
           />
         </div>
       </div>
@@ -101,7 +99,7 @@ const RecoveryResilience = () => {
         />
       </div>
 
-      {/* Authentication Check (Example) */}
+      {/* Authentication Check */}
       <div className="w-full max-w-4xl">
         <a
           href="/login"
@@ -115,8 +113,5 @@ const RecoveryResilience = () => {
 };
 
 export default RecoveryResilience;
-
-
-
 
 
